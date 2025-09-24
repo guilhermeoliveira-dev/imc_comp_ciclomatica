@@ -18,7 +18,7 @@ public class IMC {
             else if(imc <= 27.8){
                 return "Marginalmente acima do peso";
             }
-            else if(imc <= 31.1){
+            else if(imc < 31.1){
                 return "Acima do peso ideal";
             }
             else{
@@ -35,7 +35,7 @@ public class IMC {
             else if(imc <= 27.3){
                 return "Marginalmente acima do peso";
             }
-            else if(imc <= 32.3){
+            else if(imc < 32.3){
                 return "Acima do peso ideal";
             }
             else{
