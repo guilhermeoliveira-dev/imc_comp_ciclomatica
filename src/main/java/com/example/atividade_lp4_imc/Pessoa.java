@@ -46,21 +46,21 @@ public class Pessoa {
         this.peso = peso;
     }
 
-    public String calcular_IMC(){
+    public String calcularIMC(){
 
         double imc = peso / Math.pow(altura, 2);
 
         if(sexo.equals("Masculino")){
-            if(imc < 20.7){
+            if(imc < 20.7f){
                 return "Abaixo do Peso";
             }
-            else if(imc <= 26.4){
+            else if(imc < 26.4f){
                 return "No peso normal";
             }
-            else if(imc <= 27.8){
+            else if(imc < 27.8f){
                 return "Marginalmente acima do peso";
             }
-            else if(imc <= 31.1){
+            else if(imc < 31.1f){
                 return "Acima do peso ideal";
             }
             else{
@@ -68,16 +68,16 @@ public class Pessoa {
             }
         }
         else{
-            if(imc < 19.1){
+            if(imc < 19.1f){
                 return "Abaixo do Peso";
             }
-            else if(imc <= 25.8){
+            else if(imc < 25.8f){
                 return "No peso normal";
             }
-            else if(imc <= 27.3){
+            else if(imc < 27.3f){
                 return "Marginalmente acima do peso";
             }
-            else if(imc <= 32.3){
+            else if(imc < 32.3f){
                 return "Acima do peso ideal";
             }
             else{
