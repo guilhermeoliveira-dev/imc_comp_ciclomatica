@@ -1,85 +1,11 @@
 package com.example.atividade_lp4_imc;
 
+import org.easymock.*;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class PessoaTest {
 
-    @BeforeEach
-    void setUp(){
-
-    }
-
-    @Test
-    void Masculino_Abaixo_do_Peso(){
-        Pessoa pessoa = new Pessoa("Masculino", 1.0f, 20.6f);
-        String imc = pessoa.calcularIMC();
-        Assertions.assertEquals("Abaixo do Peso", imc);
-    }
-
-    @Test
-    void Masculino_No_peso_normal(){
-        Pessoa pessoa = new Pessoa("Masculino", 1.0f, 26.3f);
-        String imc = pessoa.calcularIMC();
-        Assertions.assertEquals("No peso normal", imc);
-    }
-
-    @Test
-    void Masculino_Marginalmente_acima_do_peso(){
-        Pessoa pessoa = new Pessoa("Masculino", 1.0f, 27.7);
-        String imc = pessoa.calcularIMC();
-        Assertions.assertEquals("Marginalmente acima do peso", imc);
-    }
-
-    @Test
-    void Masculino_Acima_do_peso_ideal(){
-        Pessoa pessoa = new Pessoa("Masculino", 1.0f, 31.0f);
-        String imc = pessoa.calcularIMC();
-        Assertions.assertEquals("Acima do peso ideal", imc);
-    }
-
-    @Test
-    void Masculino_Obeso(){
-        Pessoa pessoa = new Pessoa("Masculino", 1.0f, 31.1f);
-        String imc = pessoa.calcularIMC();
-        Assertions.assertEquals("Obeso", imc);
-    }
-
-    @Test
-    void Feminino_Abaixo_do_Peso(){
-        Pessoa pessoa = new Pessoa("Feminino", 1.0f, 19.0f);
-        String imc = pessoa.calcularIMC();
-        Assertions.assertEquals("Abaixo do Peso", imc);
-    }
-
-    @Test
-    void Feminino_No_peso_normal(){
-        Pessoa pessoa = new Pessoa("Feminino", 1.0f, 25.7f);
-        String imc = pessoa.calcularIMC();
-        Assertions.assertEquals("No peso normal", imc);
-    }
-
-    @Test
-    void Feminino_Marginalmente_acima_do_peso(){
-        Pessoa pessoa = new Pessoa("Feminino", 1.0f, 27.2);
-        String imc = pessoa.calcularIMC();
-        Assertions.assertEquals("Marginalmente acima do peso", imc);
-    }
-
-    @Test
-    void Feminino_Acima_do_peso_ideal(){
-        Pessoa pessoa = new Pessoa("Feminino", 1.0f, 32.2f);
-        String imc = pessoa.calcularIMC();
-        Assertions.assertEquals("Acima do peso ideal", imc);
-    }
-
-    @Test
-    void Feminino_Obeso(){
-        Pessoa pessoa = new Pessoa("Feminino", 1.0f, 32.3f);
-        String imc = pessoa.calcularIMC();
-        Assertions.assertEquals("Obeso", imc);
-    }
 
     @Test
     void altura_invalida(){
@@ -139,6 +65,17 @@ public class PessoaTest {
         }catch (IllegalArgumentException e){
             Assertions.fail(e.getMessage());
         }
+    }
+
+    @Test
+    void imc_valido(){
+
+        Pessoa pessoa = new Pessoa("Feminino", 1.0d, 20.0d);
+
+        double imc = pessoa.getIMC();
+
+        Assertions.assertEquals(20.0d, imc);
+
     }
 
 }
